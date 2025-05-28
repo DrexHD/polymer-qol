@@ -85,6 +85,11 @@ publishMods {
 	displayName = "polymer-qol ${version.get()}"
 	modLoaders.add("fabric")
 
+	curseforge {
+		accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
+		projectId = "1275663"
+		minecraftVersions.add(project.curseforge_minecraft_version)
+	}
 	modrinth {
 		accessToken = providers.environmentVariable("MODRINTH_TOKEN")
 		projectId = "EsaSOXRN"
