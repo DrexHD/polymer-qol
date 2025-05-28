@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "me.drex.polymerqol.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "me.drex.polymerqol.util.PolymerQOLMixinPlugin",
+  "mixins": [
+    "ConnectionMixin",
+    "mining.CustomBlockBreakingCheckMixin",
+    "mining.PolymerBlockUtilsMixin",
+    "ServerCommonPacketListenerImplAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}

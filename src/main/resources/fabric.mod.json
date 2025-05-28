@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "polymer-qol",
+	"version": "${version}",
+	"name": "polymer-qol",
+	"description": "Client side quality of life improvements on polymer powered servers!",
+	"authors": [
+		"Drex"
+	],
+	"license": "MIT",
+	"icon": "assets/polymer-qol/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.drex.polymerqol.PolymerQOL"
+		],
+		"client": [
+			"me.drex.polymerqol.PolymerQOLClient"
+		]
+	},
+	"mixins": [
+		"polymer-qol.mixins.json",
+		{
+			"config": "polymer-qol.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"java": ">=21"
+	}
+}

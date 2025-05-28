@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "me.drex.polymerqol.mixin.client",
+  "compatibilityLevel": "JAVA_21",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "mining.BlockBehaviourMixin",
+    "mining.PlayerMixin",
+    "mining.ToolMixin",
+    "swing.NoteBlockMixin",
+    "update.BlockItemMixin",
+    "update.MultiPlayerGameModeMixin"
+  ]
+}
