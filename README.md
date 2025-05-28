@@ -12,15 +12,21 @@ If `client_mining` is enabled in the server config PolyMCs and polymers server s
 for players with polymer-qol. The clients use polymers block syncing to figure out modded block breaking times to
 calculate them on the client. This allows for smoother block breaking *(especially useful on high ping)*.
 
+![laggy server side mining](https://i.imgur.com/sWnbpYb.gif)
+
 ### Preventing Arm Swing
 
 If `prevent_swing` is enabled in the server config, players with polymer-qol won't swing their arms when interacting
 with fake noteblocks (which are often used for modded blocks).
 
+![arm is swinging](https://i.imgur.com/jUa9upN.gif)
+
 ### No Block Updates
 
 When polymer-qol is installed on the client breaking and placing blocks won't cause block updates on the client, which
 removes visually distracting incorrect blocks *(especially useful with high ping)*.
+
+![incorrect block updates](https://i.imgur.com/2l421Rm.gif)
 
 ## Server Config
 
