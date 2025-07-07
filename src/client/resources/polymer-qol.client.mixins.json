@@ -10,7 +10,6 @@
     "mining.PlayerMixin",
     "mining.ToolMixin",
     "swing.NoteBlockMixin",
-    "update.BlockItemMixin",
-    "update.MultiPlayerGameModeMixin"
+    "update.BlockBehaviourMixin"
   ]
 }
