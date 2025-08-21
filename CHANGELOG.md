@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 2025-08-21
+### Fixed
+- Custom-block block-updates being canceled on integrated servers
+
 ## [1.0.1] - 2025-07-07
 ### Fixed
 - Block updates of vanilla blocks

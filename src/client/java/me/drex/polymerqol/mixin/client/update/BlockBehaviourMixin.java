@@ -30,7 +30,7 @@ public abstract class BlockBehaviourMixin {
         Operation<BlockState> original
     ) {
         ClientPolymerBlock.State state = PolymerClientUtils.getPolymerStateAt(blockPos);
-        if (state != ClientPolymerBlock.NONE_STATE) {
+        if (state != ClientPolymerBlock.NONE_STATE && levelReader.isClientSide()) {
             return asState;
         }
         return original.call(instance, asState, levelReader, scheduledTickAccess, blockPos, direction, blockPos2, blockState, randomSource);
