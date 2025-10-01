@@ -29,13 +29,13 @@ public class PolymerQOL implements ModInitializer {
             .register(ApplyConfigurationS2CPayload.ID, ApplyConfigurationS2CPayload.CODEC);
         ServerConfigurationNetworking.registerGlobalReceiver(OfferConfigurationC2SPayload.ID, (payload, context) -> {
             ClientConfiguration clientConfiguration = payload.configurationOffer();
-            LOGGER.info("Received configuration from {}: {}", context.networkHandler().getOwner().getName(), clientConfiguration);
+            LOGGER.info("Received configuration from {}: {}", context.networkHandler().getOwner().name(), clientConfiguration);
 
             Connection connection = ((ServerCommonPacketListenerImplAccessor) context.networkHandler()).getConnection();
             ClientConfiguration modifiedClientConfiguration = clientConfiguration.applyServerConfiguration();
             ((IConnection) connection).polymer_qol$setConfiguration(modifiedClientConfiguration);
 
-            LOGGER.info("Sending modified configuration to {}: {}", context.networkHandler().getOwner().getName(), modifiedClientConfiguration);
+            LOGGER.info("Sending modified configuration to {}: {}", context.networkHandler().getOwner().name(), modifiedClientConfiguration);
             ServerConfigurationNetworking.send(context.networkHandler(), new ApplyConfigurationS2CPayload(modifiedClientConfiguration));
         });
     }
