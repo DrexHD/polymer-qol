@@ -35,7 +35,7 @@ public abstract class ToolMixin {
         if (optionalTagKey.isPresent() && clientState != null) {
             TagKey<Block> tagKey = optionalTagKey.get();
 
-            ImplPolymerRegistry<ClientPolymerEntry<?>> clientBlockRegistry = InternalClientRegistry.BY_VANILLA_ID.get(Registries.BLOCK.location());
+            ImplPolymerRegistry<ClientPolymerEntry<?>> clientBlockRegistry = InternalClientRegistry.BY_VANILLA_ID.get(Registries.BLOCK.identifier());
             Set<ClientPolymerEntry<?>> clientTag = clientBlockRegistry.getTag(tagKey.location());
             return clientTag.contains(clientState.block());
         }
