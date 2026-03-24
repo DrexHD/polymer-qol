@@ -5,7 +5,6 @@
   "plugin": "me.drex.polymerqol.util.PolymerQOLMixinPlugin",
   "mixins": [
     "ConnectionMixin",
-    "mining.CustomBlockBreakingCheckMixin",
     "mining.PolymerBlockUtilsMixin",
     "ServerCommonPacketListenerImplAccessor"
   ],

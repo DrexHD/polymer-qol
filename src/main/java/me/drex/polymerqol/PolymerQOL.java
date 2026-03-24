@@ -23,20 +23,20 @@ public class PolymerQOL implements ModInitializer {
     @Override
     public void onInitialize() {
         ConfigManager.load();
-        PayloadTypeRegistry.configurationC2S()
+        PayloadTypeRegistry.serverboundConfiguration()
             .register(OfferConfigurationC2SPayload.ID, OfferConfigurationC2SPayload.CODEC);
-        PayloadTypeRegistry.configurationS2C()
+        PayloadTypeRegistry.clientboundConfiguration()
             .register(ApplyConfigurationS2CPayload.ID, ApplyConfigurationS2CPayload.CODEC);
         ServerConfigurationNetworking.registerGlobalReceiver(OfferConfigurationC2SPayload.ID, (payload, context) -> {
             ClientConfiguration clientConfiguration = payload.configurationOffer();
-            LOGGER.info("Received configuration from {}: {}", context.networkHandler().getOwner().name(), clientConfiguration);
+            LOGGER.info("Received configuration from {}: {}", context.packetListener().getOwner().name(), clientConfiguration);
 
-            Connection connection = ((ServerCommonPacketListenerImplAccessor) context.networkHandler()).getConnection();
+            Connection connection = ((ServerCommonPacketListenerImplAccessor) context.packetListener()).getConnection();
             ClientConfiguration modifiedClientConfiguration = clientConfiguration.applyServerConfiguration();
             ((IConnection) connection).polymer_qol$setConfiguration(modifiedClientConfiguration);
 
-            LOGGER.info("Sending modified configuration to {}: {}", context.networkHandler().getOwner().name(), modifiedClientConfiguration);
-            ServerConfigurationNetworking.send(context.networkHandler(), new ApplyConfigurationS2CPayload(modifiedClientConfiguration));
+            LOGGER.info("Sending modified configuration to {}: {}", context.packetListener().getOwner().name(), modifiedClientConfiguration);
+            ServerConfigurationNetworking.send(context.packetListener(), new ApplyConfigurationS2CPayload(modifiedClientConfiguration));
         });
     }
 
